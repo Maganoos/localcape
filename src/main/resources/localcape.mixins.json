@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "eu.magkari.mc.localcape.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+      "AbstractClientPlayerMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
