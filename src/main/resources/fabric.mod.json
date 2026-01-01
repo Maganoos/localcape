@@ -18,7 +18,10 @@
 	"entrypoints": {
 		"main": [
 			"eu.magkari.mc.localcape.Localcape"
-		]
+		],
+        "modmenu": [
+          "eu.magkari.mc.localcape.compat.ModMenuCompat"
+        ]
 	},
 	"mixins": [
 		"localcape.mixins.json"

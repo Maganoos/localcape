@@ -37,6 +37,9 @@ public class Localcape implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+        try {
+            Files.createDirectories(BASE_DIR);
+        } catch (IOException ignored) {}
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, context) -> {
             dispatcher.register(ClientCommandManager.literal("flush-capes")
                     .executes(commandContext -> {
@@ -47,7 +50,7 @@ public class Localcape implements ModInitializer {
         });
     }
 
-    private static final Path BASE_DIR = FabricLoader.getInstance().getConfigDir().resolve(Localcape.MOD_ID);
+    public static final Path BASE_DIR = FabricLoader.getInstance().getConfigDir().resolve(Localcape.MOD_ID);
 
     private static final Map<UUID, CachedCape> CACHE = new HashMap<>();
 
